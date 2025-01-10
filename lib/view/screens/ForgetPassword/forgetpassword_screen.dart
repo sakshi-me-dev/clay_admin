@@ -6,16 +6,16 @@ import 'package:flutter/foundation.dart' show kIsWeb;
 
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_text_field.dart';
-import '../Login/login_screen.dart';
+import '../CreatePassword/createpassword_screen.dart';
 
-class CreateAccount extends StatefulWidget {
-  const CreateAccount({super.key});
+class ForgetPassword extends StatefulWidget {
+  const ForgetPassword({super.key});
 
   @override
-  State<CreateAccount> createState() => _CreateAccountState();
+  State<ForgetPassword> createState() => _ForgetPasswordState();
 }
 
-class _CreateAccountState extends State<CreateAccount> {
+class _ForgetPasswordState extends State<ForgetPassword> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passWordController = TextEditingController();
 
@@ -77,9 +77,12 @@ class _CreateAccountState extends State<CreateAccount> {
       mainAxisSize: MainAxisSize.min,
       children: [
         Text(
-          createAccount,
+          forgetPassword,
           style: AppTextStyle.bold(),
         ),
+        SizedBox(height: 20,),
+        Text("The 'Forget Password' page enables admins to reset"),
+        Text(" their passwords by entering their registered email"),
         SizedBox(
           height: 20,
         ),
@@ -111,7 +114,7 @@ class _CreateAccountState extends State<CreateAccount> {
             minimumSize: Size(buttonWidth, 50),
             backgroundColor: Color(0xFFED1B24),
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen(),));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => CreatePassword(),));
             },
             buttonText: login,
           ),
@@ -127,7 +130,7 @@ class _CreateAccountState extends State<CreateAccount> {
                 style: const TextStyle(color: Color(0xFFED1B24)),
                 recognizer: TapGestureRecognizer()
                   ..onTap = () {
-
+                    // Navigate to Sign Up
                   },
               ),
             ],

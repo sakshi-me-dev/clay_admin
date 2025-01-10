@@ -8,14 +8,14 @@ import '../../widgets/custom_button.dart';
 import '../../widgets/custom_text_field.dart';
 import '../Login/login_screen.dart';
 
-class CreateAccount extends StatefulWidget {
-  const CreateAccount({super.key});
+class CreatePassword extends StatefulWidget {
+  const CreatePassword({super.key});
 
   @override
-  State<CreateAccount> createState() => _CreateAccountState();
+  State<CreatePassword> createState() => _CreatePasswordState();
 }
 
-class _CreateAccountState extends State<CreateAccount> {
+class _CreatePasswordState extends State<CreatePassword> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passWordController = TextEditingController();
 
@@ -77,7 +77,7 @@ class _CreateAccountState extends State<CreateAccount> {
       mainAxisSize: MainAxisSize.min,
       children: [
         Text(
-          createAccount,
+          createPassword,
           style: AppTextStyle.bold(),
         ),
         SizedBox(
@@ -111,7 +111,7 @@ class _CreateAccountState extends State<CreateAccount> {
             minimumSize: Size(buttonWidth, 50),
             backgroundColor: Color(0xFFED1B24),
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen(),));
+
             },
             buttonText: login,
           ),

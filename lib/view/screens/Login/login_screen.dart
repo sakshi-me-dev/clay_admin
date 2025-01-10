@@ -6,16 +6,16 @@ import 'package:flutter/foundation.dart' show kIsWeb;
 
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_text_field.dart';
-import '../Login/login_screen.dart';
+import '../ForgetPassword/forgetpassword_screen.dart';
 
-class CreateAccount extends StatefulWidget {
-  const CreateAccount({super.key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
   @override
-  State<CreateAccount> createState() => _CreateAccountState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _CreateAccountState extends State<CreateAccount> {
+class _LoginScreenState extends State<LoginScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passWordController = TextEditingController();
 
@@ -76,8 +76,14 @@ class _CreateAccountState extends State<CreateAccount> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
+        Image.asset(
+          'assets/images/appIcon.png',
+          height: 150,
+          fit: BoxFit.contain,
+        ),
+        const SizedBox(height: 24),
         Text(
-          createAccount,
+          login,
           style: AppTextStyle.bold(),
         ),
         SizedBox(
@@ -111,7 +117,7 @@ class _CreateAccountState extends State<CreateAccount> {
             minimumSize: Size(buttonWidth, 50),
             backgroundColor: Color(0xFFED1B24),
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen(),));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => ForgetPassword(),));
             },
             buttonText: login,
           ),
@@ -119,15 +125,15 @@ class _CreateAccountState extends State<CreateAccount> {
         const SizedBox(height: 16),
         RichText(
           text: TextSpan(
-            text: doNotHaveAccount,
+            text: notAMember,
             style: Theme.of(context).textTheme.bodyMedium,
             children: [
               TextSpan(
-                text: signUp,
+                text: signUpNow,
                 style: const TextStyle(color: Color(0xFFED1B24)),
                 recognizer: TapGestureRecognizer()
                   ..onTap = () {
-
+                    // Navigate to Sign Up
                   },
               ),
             ],

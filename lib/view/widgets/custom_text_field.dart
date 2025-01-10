@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 class CustomTextField extends StatelessWidget {
   final String hintText;
   final Widget? prefixIcon;
@@ -14,7 +13,8 @@ class CustomTextField extends StatelessWidget {
     this.isPassword = false,
     this.keyboardType = TextInputType.text,
     this.validator,
-    required this.controller, required bool obscureText,
+    required this.controller,
+    required bool obscureText,
   });
 
   @override
@@ -26,12 +26,15 @@ class CustomTextField extends StatelessWidget {
       validator: validator,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.grey[200],
+        fillColor: Color(0xFFF5F3F3),
         hintText: hintText,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.0),
-          borderSide: BorderSide.none,
         ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8.0),
+              borderSide: BorderSide(color: Color(0XFFED1B24)),
+        )
       ),
     );
   }
